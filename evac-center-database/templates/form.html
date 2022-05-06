@@ -1,0 +1,61 @@
+{% extends 'root.html' %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+{% block title %}
+Add an Evacuee
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row pb-5">
+		<div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+        <hr style="width:50%", size="2.5", color=slategray>
+      
+<h1 class="pt-5 pb-2"><center>Add a New Evacuee</center></h1>
+<hr style="width:50%", size="2.5", color=midnightblue>
+
+<center><h3><p style="color:springgreen">Fill out the data below:</p></h3></center>
+
+<center><form method="POST" action="{{ url_for('form') }}">
+    {{ form.csrf_token }}
+    {{ form.name.label }}
+    {{ form.name }}
+    <br></br>
+    {{ form.dob.label }}
+    {{ form.dob }}
+    <br></br>
+    {{ form.age.label }}
+    {{ form.age }}
+    <br></br>
+    {{ form.phone_number.label }}
+    {{ form.phone_number }}
+    <br></br>
+    {{ form.email.label }}
+    {{ form.email }}
+    <br></br>
+    <input type="submit" value="Submit">
+</form>
+</center>
+
+</div>
+<hr style="width:50%", size="2.5", color=midnightblue>
+<br></br>
+
+<center>
+    <a href="{{ url_for('select_evacuee') }}"><button>Look at Evacuee Data</button></a>
+    <a href="{{ url_for('index') }}"><button>Return to Homepage</button></a>
+</center>
+
+</div>
+</div>
+
+{% endblock%}

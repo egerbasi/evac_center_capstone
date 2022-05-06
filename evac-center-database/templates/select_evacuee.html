@@ -1,0 +1,36 @@
+{% extends 'root.html' %}
+
+{% block title %}
+Evac Center
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+      <hr style="width:50%", size="2.5", color=slategray>
+
+      <center><h1 class="lead"><p style="color:rgb(19, 19, 84)">Choose an evacuee name to query:</p></h1>
+        <hr style="width:50%", size="2.5", color=midnightblue>
+        
+        <a href="{{ url_for('index') }}"><button>Return to Homepage</button></a>
+        <hr style="width:50%", size="2.5", color=midnightblue>
+
+        <br></br>
+    </center>
+
+      <table class="centerTable">
+        <tr> 
+            <th>Evacuee Name</th>
+        </tr>
+
+        {% for n in names %}
+        <tr>
+        <td>
+            <a href="{{ url_for( 'inventory', name=n.name ) }}">{{ n.name }}</a>
+        </td>
+        {% endfor %}
+    </ul></tr></table>
+    {% endblock %}

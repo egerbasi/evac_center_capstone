@@ -1,0 +1,41 @@
+{% extends 'root.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row pb-5">
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+    <h1 class="pt-5 pb-2"><center>Evacuees List</center></h1>
+
+	<center><p style="color:springgreen">This is a list for all the <strong>{{ name }}</strong> names in our inventory.</center></p>
+
+		<table class="centerTable">
+			<tr> 
+				<th>Evacuee ID</th>
+				<th>Evacuee Name</th>
+				<th>Evacuee DOB</th>
+				<th>Evacuee Age</th>
+				<th>Evacuee Phone</th>
+				<th>Evacuee Email</th>
+			</tr>
+
+			<!-- the for-loop to print out all the users -->
+			{% for evacuee in evacuees %}
+			<tr>
+				<td>{{ evacuee.evacueeid }}</td>
+				<td>{{ evacuee.name }}</td>
+				<td>{{ evacuee.dob }}</td>
+				<td>{{ evacuee.age }}</td>
+				<td>{{ evacuee.phone_number }}</td>
+				<td>{{ evacuee.email }}</td>
+			</tr>
+			{% endfor %} 
+		</table>
+		<br></br>
+		<center><a href="{{ url_for('index') }}"><button>Return to Homepage</button></a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
