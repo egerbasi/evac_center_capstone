@@ -1,0 +1,33 @@
+{% extends 'root.html' %}
+
+{% block title %}
+Evac Center
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+    <img src="static/fire.jpg"
+      width="1024"
+      height="170"/>
+
+      <h1 class="pt-5 pb-2"><center>Welcome to the Evacuation Center Database!</center></h1>
+      <hr style="width:50%", size="3", color="darkslateblue">
+
+      <center><h2 class="lead"><p style="color:black">~How would you like to proceed?~</p></h2></center>
+
+    <table class="centerTable">
+      <tr>
+      <th><h3 class="lead">1. <a href="{{ url_for('select_evacuee') }}">Select an evacuee</a></h3></th>
+      <th><h3 class="lead"> 2. Add a <a href="{{ url_for('form') }}">new evacuee</a></h3></th>
+      </tr>
+    </table>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
